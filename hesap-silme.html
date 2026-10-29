@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hesap Silme — Halı Saha</title>
+
+<style>
+  :root {
+    --bg: #FBFCFA;
+    --surface: #FFFFFF;
+    --line: #E2E7DF;
+    --text: #14201A;
+    --muted: #566159;
+    --accent: #2F6B1E;
+    --note-bg: #F4F8EF;
+    --warn-bg: #FFF6E8;
+    --warn-line: #E8C489;
+    --warn-text: #7A5312;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0A0F0D;
+      --surface: #121A17;
+      --line: #22302A;
+      --text: #ECF1EE;
+      --muted: #9AAAA2;
+      --accent: #A8DC2C;
+      --note-bg: #141F19;
+      --warn-bg: #241C0D;
+      --warn-line: #5A4415;
+      --warn-text: #FFC259;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0A0F0D; --surface: #121A17; --line: #22302A; --text: #ECF1EE;
+    --muted: #9AAAA2; --accent: #A8DC2C; --note-bg: #141F19;
+    --warn-bg: #241C0D; --warn-line: #5A4415; --warn-text: #FFC259;
+  }
+  :root[data-theme="light"] {
+    --bg: #FBFCFA; --surface: #FFFFFF; --line: #E2E7DF; --text: #14201A;
+    --muted: #566159; --accent: #2F6B1E; --note-bg: #F4F8EF;
+    --warn-bg: #FFF6E8; --warn-line: #E8C489; --warn-text: #7A5312;
+  }
+
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+    font-size: 16.5px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .doc { max-width: 46rem; margin: 0 auto; padding: 56px 24px 96px; }
+
+  header { border-bottom: 2px solid var(--text); padding-bottom: 22px; margin-bottom: 12px; }
+  header h1 { margin: 0 0 10px; font-size: clamp(30px, 5vw, 40px); line-height: 1.12; letter-spacing: -.02em; }
+  .sub { margin: 0; color: var(--muted); font-size: 15px; }
+
+  h2 {
+    margin: 44px 0 12px; font-size: 20px; letter-spacing: -.01em;
+    padding-top: 18px; border-top: 1px solid var(--line);
+  }
+  h2:first-of-type { border-top: 0; }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 7px; }
+  strong { font-weight: 700; }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .note {
+    background: var(--note-bg); border: 1px solid var(--line);
+    border-radius: 12px; padding: 16px 18px; margin: 18px 0;
+  }
+  .note p:last-child { margin-bottom: 0; }
+  .warn {
+    background: var(--warn-bg); border: 1px solid var(--warn-line); color: var(--warn-text);
+    border-radius: 12px; padding: 16px 18px; margin: 18px 0;
+  }
+  .warn p:last-child { margin-bottom: 0; }
+
+  .tablewrap { overflow-x: auto; margin: 16px 0 20px; }
+  table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: 15px; }
+  th, td { text-align: left; padding: 11px 13px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--surface); font-size: 12.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+
+  footer {
+    margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 14.5px;
+  }
+</style>
+
+<div class="doc">
+
+<header>
+  <h1>Hesap Silme</h1>
+  <p class="sub">Halı Saha uygulaması · Son güncelleme: 27 Ekim 2026</p>
+</header>
+
+<p>
+  Halı Saha hesabınızı istediğiniz zaman silebilirsiniz. Bu sayfa, silmenin nasıl yapıldığını,
+  nelerin silindiğini ve nelerin kaldığını açıklar.
+</p>
+
+<h2>Uygulama içinden silme</h2>
+<ol>
+  <li>Uygulamada <strong>Ayarlar</strong> ekranını açın.</li>
+  <li>En alttaki <strong>Hesap</strong> bölümünde <strong>Hesabımı sil</strong> düğmesine dokunun.</li>
+  <li>Açılan uyarıyı okuyup <strong>Devam et</strong>'i seçin.</li>
+  <li>Onay kutusuna <strong>SİL</strong> yazın ve <strong>Hesabımı kalıcı olarak sil</strong>'e dokunun.</li>
+</ol>
+<div class="warn">
+  <p>
+    <strong>Silme anında yapılır ve geri alınamaz.</strong> Hesabınızı sildikten sonra aynı e-posta ile
+    yeniden kayıt olabilirsiniz, ancak eski profiliniz, puanlarınız ve oylarınız geri gelmez.
+  </p>
+</div>
+
+<h2>Silinenler ve kalanlar</h2>
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr><th>Veri</th><th>Ne olur</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>E-posta ve giriş bilgileri</td>
+      <td>Silinir.</td>
+    </tr>
+    <tr>
+      <td>Profil: ad, mevki, ayak, profil fotoğrafı</td>
+      <td>Silinir; fotoğraf dosyaları depolamadan da kaldırılır.</td>
+    </tr>
+    <tr>
+      <td>Bildirim kimliği (push token)</td>
+      <td>Silinir.</td>
+    </tr>
+    <tr>
+      <td>Takım üyelikleri ve roller</td>
+      <td>Silinir. Kaptansanız kaptanlık devredilir (aşağıya bakın).</td>
+    </tr>
+    <tr>
+      <td>Yoklama oyları, verdiğiniz puanlar ve ödül oyları</td>
+      <td>Silinir.</td>
+    </tr>
+    <tr>
+      <td>Sohbet mesajlarınız</td>
+      <td>Metni silinir; mesaj satırı sohbetteki akış bozulmasın diye "Ayrılmış üye" adıyla kalır, içeriği görünmez. Silinmiş mesajlar kısa süre içinde kalıcı olarak temizlenir; başka bir kullanıcının şikâyet ettiği bir mesajın alıntısı moderasyon kaydında en fazla 1 yıl tutulabilir.</td>
+    </tr>
+    <tr>
+      <td>Geçmiş maçların skorları, gol kayıtları ve kadro geçmişi</td>
+      <td><strong>Kalır</strong>, ancak adınızla bağı koparılır: kadro ve gol kayıtlarındaki adınız "Silinmiş oyuncu" ile değiştirilir. Bunlar kalan takım arkadaşlarınızın maç geçmişidir. <strong>Takımda başka üye kalmazsa takım silindiği için bu geçmiş de gider.</strong></td>
+    </tr>
+    <tr>
+      <td>Yayınlanmış gazete sayıları (basın demeçleri dahil)</td>
+      <td><strong>Kalır</strong>; yayınlandığı haliyle (adınız ve demeçleriniz dahil) takımın arşivinde durur, sonradan değiştirilemez. Yayınlanmamış demeçleriniz silinir. Gazetede adınızın kalmasını istemiyorsanız silmeden önce takım kaptanıyla ya da destek adresiyle iletişime geçin.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Kaptansanız</h2>
+<ul>
+  <li>Kaptanlık, takımın <strong>yardımcısına</strong> (yoksa en eski üyesine) geçer. Takım ve maç geçmişi devam eder.</li>
+  <li>Takımda <strong>tek kişi sizseniz takım silinir</strong>: takım logosu, maç geçmişi ve gazeteleri de birlikte gider. Silme öncesi uygulama hangi takımların silineceğini size ayrıca yazar.</li>
+  <li>Birden fazla takımdaysanız bu işlem her takım için ayrı uygulanır.</li>
+</ul>
+
+<h2>Uygulamaya erişemiyorsanız</h2>
+<div class="note">
+  <p>
+    Uygulamayı açamıyor ya da giriş yapamıyorsanız, hesabınızın silinmesi için
+    kayıt olduğunuz e-posta adresinden bize yazın:
+    <a href="mailto:destek.htapp@gmail.com?subject=Hesap%20silme%20talebi">destek.htapp@gmail.com</a>.
+    Kimliğinizi doğruladıktan sonra talebinize <strong>en geç 30 gün içinde</strong> dönüş yapılır.
+  </p>
+</div>
+
+<h2>İlgili sayfalar</h2>
+<p>
+  Hangi verilerin neden toplandığını <a href="./">Gizlilik Politikası</a>'nda bulabilirsiniz.
+</p>
+
+<footer>
+  Halı Saha · Hesap Silme · 27 Ekim 2026
+</footer>
+
+</div>
+
+</html>
